@@ -1,0 +1,7 @@
+.main-wrapper {
+    overflow: hidden;
+    .page-content {
+        position: relative;
+        z-index: 3;
+    }
+}

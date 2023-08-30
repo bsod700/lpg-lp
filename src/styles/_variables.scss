@@ -3,8 +3,13 @@
 // ======================================
 
 // colors
-$primery: #FDC45D;
-$subprimery: #F48046;
+html {
+    --primery-color: #7966FE;
+}
+
+
+$primery: #7966FE;
+$subprimery: #FABC04;
 $black: #1E1E1E;
 $white: #F2F2F2;
 $font-color-white: #D9D9D9;

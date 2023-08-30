@@ -1,0 +1,16 @@
+
+<div class="faq-wrapper">
+    <div class="container">
+        <h2>{{componentConfig.title}}</h2>
+        <h3>{{componentConfig.subtitle}}</h3>
+
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let q of componentConfig.qs">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{q.title}}</mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>{{q.answer}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

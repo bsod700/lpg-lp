@@ -1,0 +1,55 @@
+<div class="contact-wrapper" id="contact" [ngClass]="[message ? 'message': '']">
+    <form [formGroup]="contactForm" (submit)="sendEmail($event)">
+      <div class="container">
+        <div class="talk">
+          <h2>{{componentConfig.title}}</h2>
+          <h3>{{componentConfig.subtitle}}</h3>
+          <div class="input-group">
+            <label for="name">{{componentConfig.form.name.text}}</label>
+            <mat-form-field>
+              <mat-label>{{componentConfig.form.name.lable}}</mat-label>
+              <input matInput [placeholder]="componentConfig.form.name.lable" [value]="componentConfig.form.name.lable" name="name" formControlName="name" id="name" aria-labelledby="name" required>
+              <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                {{componentConfig.form.name.error}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          
+          <div class="input-group">
+            <label for="email">{{componentConfig.form.email.text}}</label>
+            <mat-form-field>
+              <mat-label>{{componentConfig.form.email.lable}}</mat-label>
+              <input matInput type="email" [placeholder]="componentConfig.form.email.lable" [value]="componentConfig.form.email.lable" name="email" formControlName="email" id="email" aria-labelledby="email" required>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('email') && !contactForm.get('email')?.hasError('required')">
+               כתובת אימייל לא תקינה
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                {{componentConfig.form.email.error}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="input-group">
+            <label for="phone">{{componentConfig.form.phone.text}}</label>
+            <mat-form-field>
+              <mat-label>{{componentConfig.form.phone.lable}}</mat-label>
+              <input matInput type="phone" [placeholder]="componentConfig.form.phone.lable" [value]="componentConfig.form.phone.lable" name="phone" formControlName="phone" id="phone" aria-labelledby="phone" required>
+              <mat-error *ngIf="contactForm.get('phone')?.hasError('required')">
+                {{componentConfig.form.email.error}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="button-wrapper">
+            <button type="submit" mat-raised-button color="primary" class="glow-shadow">{{componentConfig.form.submit}}</button>
+          </div>
+
+        </div>
+        
+        <div class="successfull-message">
+          <h2>{{componentConfig.message.title}}</h2>
+          <p>{{componentConfig.message.subtitle}}</p>
+        </div>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,60 @@
+@import "src/styles/mixin";
+.navbar-wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 111111;
+    box-shadow: 0px 0 0 0px rgba(0, 0, 0, 0.25);
+    transition: transform ease-in-out .5s, background-color ease-in-out .5s;
+    will-change: transform, background-color;
+    background-color: transparent;
+    transform: translateY(0%);
+    @include lg {
+        justify-content: space-between;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &.scrolled-top-nav {
+        transform: translateY(-100%);
+    }
+    &.scrolled-nav {
+        background-color: #EEF1FC;
+        box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+        transform: translateY(0%);
+        padding-top: 12px;
+        padding-bottom: 12px;
+        .logo-container {
+            flex: 0 0 120px;
+            app-logo ::ng-deep .logo-wrapper {
+                img {
+                    width: 120px;
+                    height: 31px;
+                }
+            }
+        }
+        app-cta {
+            display: none;
+            @include lg {
+                display: block;
+            }
+        }
+    }
+    .logo-container {
+        flex: 0 0 200px;
+        app-logo ::ng-deep .logo-wrapper {
+            img {
+                width: 200px;
+                height: 52px;
+            }
+        }
+    }
+    app-cta {
+        display: none;
+    }
+}

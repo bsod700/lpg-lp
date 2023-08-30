@@ -1,0 +1,81 @@
+@import "src/styles/mixin";
+
+.header-wrapper {
+    background-image: url(/assets/imgs/yellow-ring.svg), url(/assets/imgs/dots.svg);
+    background-position: calc(50% + 505px) top, calc(50% + 300px) bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 450px auto, 365px auto;
+    @include md {
+    }
+    @include lg {
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 255px;
+        flex-direction: column;
+        @include md {
+            flex-direction: row;
+        }
+    }
+    .img-container {
+        
+        @include md {
+            flex: 0 0 375px;
+            margin-right: -40px;
+            margin-top: -40px;
+        }
+        @include lg {
+            flex: 0 0 540px;
+            margin-right: -190px;
+            margin-top: -40px;
+        }
+        @include xl {
+            flex: 0 0 635px;
+            margin-right: -190px;
+            margin-top: -40px;
+        }
+        app-hero-img ::ng-deep svg {
+            width: 375px;
+            height: 324px;
+            @include md {
+            }
+            @include lg {
+                width: 540px;
+                height: 466px;
+            }
+            @include xl {
+                width: 635px;
+                height: 548px;
+            }
+        }
+    }
+    .content {
+        @include md {
+            flex: 0 0 410px;
+        }
+        @include lg {
+            flex: 0 0 465px;
+        }
+        @include xl {
+            flex: 0 0 540px;
+        }
+    }
+    h1 {
+        font-size: 40px;
+        margin-bottom: 24px;
+        @include lg {
+            font-size: 45px;
+        }
+        @include xl {
+            font-size: 54px;
+        }
+    }
+    p {
+        margin-bottom: 24px;
+        font-size: 16px;
+        @include lg {
+            font-size: 18px;
+        }
+    }
+}

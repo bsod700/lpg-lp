@@ -1,0 +1,18 @@
+<div class="our-services-wrapper">
+    <div class="container">
+        <h2>{{componentConfig.title}}</h2>
+        <h3>{{componentConfig.subtitle}}</h3>
+        <div class="cards">
+            <ng-container *ngFor="let card of componentConfig.cards">
+                <div class="card">
+                    <div class="img-container">
+                        <img [src]="card.img.src" [alt]="card.img.alt">
+                    </div>
+                    <h4>{{card.title}}</h4>
+                    <p>{{card.paragraph}}</p>
+                </div>
+            </ng-container>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+@import "src/styles/mixin";
+
+.our-services-wrapper {
+    text-align: center;
+    margin-top: 192px;
+    position: relative;
+    z-index: 2;
+    h2 {
+        color: $primery;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+    h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 72px;
+    }
+    .cards {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 24px;
+        @include md {
+            grid-template-columns: repeat(2, minmax(275px, 385px));
+        grid-template-rows: repeat(3, 1fr);
+        }
+        @include lg {
+            grid-template-columns: repeat(3, minmax(275px, 385px));
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .card {
+            border-radius: 30px;
+            border: 1px solid #FFF;
+            background: #FFF;
+            box-shadow: 0px 11px 22px 0px #7966fe0d;
+            padding: 18px;
+            text-align: start;
+            .img-container {
+                width: 104px;
+                height: 104px;
+                margin-bottom: 24px;
+                img {
+                    width: 104px;
+                    height: 104px; 
+                }
+            }
+            h4 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+            p {
+                color: #505050; 
+            }
+        }
+    }
+}

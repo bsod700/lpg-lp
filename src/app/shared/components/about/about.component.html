@@ -1,0 +1,19 @@
+<div class="about-wrapper">
+    <div class="container">
+        <div class="bg">
+            <div class="circle glow-shadow"></div>
+            <div class="circle glow-shadow"></div>
+            <div class="circle glow-shadow"></div>
+            <div class="circle glow-shadow"></div>
+            <div class="circle green"></div>
+        </div>
+        <div class="content">
+            <h2>{{componentConfig.title}}</h2>
+            <h3>{{componentConfig.subtitle}}</h3>
+            <p *ngFor="let p of componentConfig.paragraph">
+                <span>{{p}}</span>
+                <br><br>
+            </p>
+        </div>
+    </div>
+</div>

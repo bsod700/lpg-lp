@@ -1,1 +1,111 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+
+
 /* You can add global styles to this file, and also import other style files */
+@import "src/styles/mixin";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tierro-music-primary: mat.define-palette(mat.$indigo-palette);
+$tierro-music-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tierro-music-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$tierro-music-theme: mat.define-light-theme((
+  color: (
+    primary: $tierro-music-primary,
+    accent: $tierro-music-accent,
+    warn: $tierro-music-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($tierro-music-theme);
+.container {
+    @include make-container(24px);
+    @include lg {
+        max-width: 1200px;
+    }
+}
+
+body,
+html {
+    background-color: #EEF1FC;
+    color: $black;
+    font-family: 'Montserrat', sans-serif;
+    overflow: inherit;
+    --mdc-filled-text-field-container-color: #EEF1FC
+}
+p {
+    font-size: 20px;
+    font-weight: 300;
+}
+* {
+    line-height: 1.1;
+    box-sizing: border-box;
+    margin: 0;
+}
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+body { 
+    margin: 0; 
+    @include scroller;
+}
+
+.desktop {
+    display: none;
+    @include lg {
+        display: block;
+    }
+}
+.tablet {
+    display: none;
+    @include md {
+        display: block;
+    }
+    @include lg {
+        display: none;
+    }
+}
+.mobile {
+    display: block;
+    @include md {
+        display: none;
+    }
+}
+a {
+    text-decoration: none;
+}
+img {
+    object-fit: contain;
+}
+.glow-shadow {
+    box-shadow: 0px 13px 24px #C5B7FE, 0px -8px 16px #D4DDFA;
+}
+@include auto-fill-design {
+  border: none;
+  -webkit-text-fill-color: $black;
+  -webkit-box-shadow: 0 0 0px 1000px #eef1fc inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.shadow {
+    box-shadow: 0px 20px 25px #7966fe40;
+}

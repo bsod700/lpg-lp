@@ -1,0 +1,86 @@
+@import "src/styles/mixin";
+
+.contact-wrapper {
+    &.message {
+        .successfull-message {
+            transform: translateY(0%);
+            opacity: 1;
+            pointer-events: all;
+        }
+        .talk, .button-wrapper {
+            display: none;
+        }
+        .container {
+            padding-top: 55px;
+        }
+    }
+    .successfull-message {
+        opacity: 0;
+        pointer-events: none;
+        min-height: 0;
+        transition: transform ease-in-out .5s;
+        transform: translateY(-100%);
+        will-change: transform;
+        background-color: #fff;
+        border-radius: 30px;
+        display: inline-flex;
+        padding: 48px;
+        flex-direction: column;
+        h2 {
+            font-size: 40px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            @include md {
+                font-size: 50px;
+            }
+        }
+        p {
+            font-size: 18px; 
+            @include md {
+                font-size: 20px; 
+            }
+        }
+   }
+    h2 {
+        color: $primery;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+    h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 48px;
+    }
+    .talk {
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 30px;
+        display: inline-flex;
+        padding: 48px;
+        min-width: 350px;
+        box-shadow: 0px 20px 26px #7966fe40;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+       
+        &:not(:nth-last-child(1)) {
+            margin-bottom: 12px;
+        }
+    }
+
+    button {
+        font-size: 20px;
+        padding: 24px 24px;
+        min-width: 200px;
+        border-radius: 35px;
+        background-color: $primery;
+        transition: background-color ease-in-out .15s;
+        will-change: background-color;
+        &:hover {
+            background-color: lighten($primery, 10);
+        }
+    }
+}

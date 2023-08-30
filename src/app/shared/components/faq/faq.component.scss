@@ -1,0 +1,33 @@
+@import "src/styles/mixin";
+
+.faq-wrapper {
+    margin-top: 96px;
+    margin-bottom: 270px;
+    h2 {
+        color: $primery;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+    h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 48px;
+    }
+    ::ng-deep {
+       
+        .mat-expansion-panel {
+            --mat-expansion-container-background-color: #FBFCFF;
+            margin-bottom: 10px;
+            border-radius: 12px !important;
+        }
+        .mat-expansion-panel-header-title { 
+            color: #1E1E1E;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        p {
+            color: #89969F;
+        }
+    }
+}

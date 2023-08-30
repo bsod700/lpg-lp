@@ -1,0 +1,8 @@
+@import "src/styles/mixin";
+
+svg {
+    .circles {
+        fill: $primery;
+        filter: drop-shadow(0px -15px 10px #D0E4F8) drop-shadow(0px 14px 11px #BFACFF);
+    }
+}

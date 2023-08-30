@@ -1,0 +1,22 @@
+<div class="why-us-wrapper">
+    <div class="container">
+        <div class="bg">
+            <div class="circle blue"></div>
+        </div>
+        <div class="img-container">
+            <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt">
+        </div>
+        <div class="content">
+            <h2>{{componentConfig.title}}</h2>
+            <div class="bullets">
+                <ng-container *ngFor="let bullet of componentConfig.bullets">
+                    <div class="bullet">
+                        <h4>{{bullet.title}}</h4>
+                        <p>{{bullet.text}}</p>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        
+    </div>
+</div>

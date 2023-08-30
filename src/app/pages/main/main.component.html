@@ -1,1 +1,13 @@
-<p>main works!</p>
+<div class="main-wrapper">
+    <app-bg />
+    <div class="page-content">
+        <app-navbar [componentConfig]="config.navbar" />
+        <app-header [componentConfig]="config.header"/>
+        <app-about [componentConfig]="config.about"/>
+        <app-our-services [componentConfig]="config.ourServices"/>
+        <app-why-us [componentConfig]="config.whyUs"/>
+        <app-faq [componentConfig]="config.faq"/>
+        <app-footer [componentConfig]="config.footer"/>
+    </div>
+   
+</div>
