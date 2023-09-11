@@ -53,6 +53,10 @@
             }
             p {
                 color: #505050; 
+                font-size: 16px;
+                @include md {
+                    font-size: 18px;
+                }
             }
         }
     }

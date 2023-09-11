@@ -1,3 +1,4 @@
-<a class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" aria-label="Chat on WhatsApp" href="https://wa.me/972526345556" target="_blank">
+<a class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" [attr.aria-label]="ctaConfig.text" href="https://wa.me/972526345556" target="_blank" (click)="trackButtonClick()">
+    <img src="assets/imgs/whatsapp.svg" alt="whatsapp">
     <p>{{ctaConfig.text}}</p>
 </a>

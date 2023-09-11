@@ -1,21 +1,24 @@
 @import "src/styles/mixin";
 
 .header-wrapper {
-    background-image: url(/assets/imgs/yellow-ring.svg), url(/assets/imgs/dots.svg);
-    background-position: calc(50% + 505px) top, calc(50% + 300px) bottom;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 450px auto, 365px auto;
-    @include md {
-    }
+    background-image: url(/assets/imgs/yellow-ring.svg);
+    background-position: calc(50% + 505px) top;
+    background-repeat: no-repeat;
+    background-size: 450px auto;
     @include lg {
+        background-image: url(/assets/imgs/yellow-ring.svg), url(/assets/imgs/dots.svg);
+        background-position: calc(50% + 505px) top, calc(50% + 300px) 420px;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 450px auto, 365px auto;
     }
     .container {
         display: flex;
         justify-content: space-between;
-        padding-top: 255px;
+        padding-top: 140px;
         flex-direction: column;
         @include md {
             flex-direction: row;
+            padding-top: 192px;
         }
     }
     .img-container {
@@ -35,7 +38,7 @@
             margin-right: -190px;
             margin-top: -40px;
         }
-        app-hero-img ::ng-deep svg {
+         app-hero-img ::ng-deep svg {
             width: 375px;
             height: 324px;
             @include md {
@@ -47,6 +50,18 @@
             @include xl {
                 width: 635px;
                 height: 548px;
+            }
+        }
+        img {
+            width: 440px;
+            height: 412px;
+            @include lg {
+                width: 530px;
+                height: 497px;
+            }
+            @include xl {
+                width: 635px;
+                height: 595px;
             }
         }
     }
@@ -68,14 +83,14 @@
             font-size: 45px;
         }
         @include xl {
-            font-size: 54px;
+            font-size: 60px;
         }
     }
     p {
         margin-bottom: 24px;
-        font-size: 16px;
+        font-size: 18px;
         @include lg {
-            font-size: 18px;
+            font-size: 24px;
         }
     }
 }

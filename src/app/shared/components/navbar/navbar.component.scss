@@ -17,8 +17,14 @@
     }
     .container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        @include sm {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
     &.scrolled-top-nav {
         transform: translateY(-100%);
@@ -30,7 +36,10 @@
         padding-top: 12px;
         padding-bottom: 12px;
         .logo-container {
-            flex: 0 0 120px;
+           
+            @include sm {
+                flex: 0 0 120px;
+            }
             app-logo ::ng-deep .logo-wrapper {
                 img {
                     width: 120px;
@@ -39,14 +48,18 @@
             }
         }
         app-cta {
-            display: none;
-            @include lg {
-                display: block;
-            }
+            // display: none;
+            // @include lg {
+            //     display: block;
+            // }
+            display: block;
         }
     }
     .logo-container {
-        flex: 0 0 200px;
+       
+        @include sm {
+            flex: 0 0 200px;
+        }
         app-logo ::ng-deep .logo-wrapper {
             img {
                 width: 200px;

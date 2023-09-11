@@ -1,5 +1,11 @@
+@import "src/styles/mixin";
+
 .bg-wrapper {
     position: relative;
+    display: none;
+    @include lg {
+        display: block;
+    }
     .wall {
         background: rgba(255, 255, 255, 0.38);
         backdrop-filter: blur(20px);

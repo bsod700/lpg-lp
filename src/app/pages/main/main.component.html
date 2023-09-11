@@ -1,12 +1,11 @@
 <div class="main-wrapper">
-    <app-bg />
     <div class="page-content">
-        <app-navbar [componentConfig]="config.navbar" />
-        <app-header [componentConfig]="config.header"/>
-        <app-about [componentConfig]="config.about"/>
-        <app-our-services [componentConfig]="config.ourServices"/>
-        <app-why-us [componentConfig]="config.whyUs"/>
-        <app-faq [componentConfig]="config.faq"/>
+        <section><app-navbar [componentConfig]="config.navbar" /></section>
+        <section><app-header [componentConfig]="config.header"/></section>
+        <section><app-about [componentConfig]="config.about"/></section>
+        <section><app-our-services [componentConfig]="config.ourServices"/></section>
+        <section><app-why-us [componentConfig]="config.whyUs"/></section>
+        <section><app-faq [componentConfig]="config.faq"/></section>
         <app-footer [componentConfig]="config.footer"/>
     </div>
    

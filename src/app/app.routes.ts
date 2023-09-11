@@ -4,7 +4,7 @@ export const routes: Routes = [
     {
         path: '', 
         loadComponent:() => import('./pages/main/main.component').then(mod  => mod.MainComponent),
-        title: 'LPG',
+        title: 'LanderX',
     },
     {
         path: 'contact', 

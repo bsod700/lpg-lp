@@ -5,8 +5,17 @@ const ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = {
   optimization: {
+    usedExports: true, // Enables tree shaking
+    minimize: true,
     minimizer: [
-      new TerserPlugin()
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            unused: true,
+            dead_code: true,
+          },
+        },
+      })
     ],
     splitChunks: {
       chunks: 'all',
