@@ -1,10 +1,10 @@
-<div class="bg">
+<div class="bg" *ngIf="componentConfig.contact">
     <div class="circle glow-shadow"></div>
     <div class="circle glow-shadow"></div>
     <div class="circle glow-shadow"></div>
 </div>
-<footer>
-    <app-contact [componentConfig]="componentConfig.contact"/>
+<footer [ngClass]="[componentConfig.contact ? '': 'no-contact']">
+    <app-contact *ngIf="componentConfig.contact" [componentConfig]="componentConfig.contact"/>
   
     <div class="container">
         <div class="left">

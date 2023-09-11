@@ -1,0 +1,20 @@
+@import "src/styles/mixin";
+
+.contact-wrapper {
+   
+    header {
+        text-align: center;
+        padding-top: 216px;
+        margin-bottom: 288px;
+        h1 {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+    }
+
+  
+}

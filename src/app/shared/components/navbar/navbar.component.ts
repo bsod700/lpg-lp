@@ -4,11 +4,12 @@ import { LogoComponent } from '../logo/logo.component';
 import { Img } from '../../interfaces/img.interface';
 import { Cta } from '../../interfaces/cta.interface';
 import { CtaComponent } from '../cta/cta.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, LogoComponent, CtaComponent],
+  imports: [CommonModule, LogoComponent, CtaComponent, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })

@@ -12,6 +12,7 @@
     will-change: transform, background-color;
     background-color: transparent;
     transform: translateY(0%);
+    cursor: pointer;
     @include lg {
         justify-content: space-between;
     }

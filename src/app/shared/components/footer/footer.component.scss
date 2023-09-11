@@ -32,10 +32,24 @@ footer {
     background-color: #F3F0FD;
     padding-top: 48px;
     padding-bottom: 96px;
-    margin-top: 48px;
     box-shadow: 0px -14px 54px 0px #7966fe0d;
     position: relative;
     z-index: 2;
+    &:not(.no-contact) {
+        margin-top: 48px;
+        .container {
+            margin-top: 48px;
+            @include sm {
+                margin-top: -55px;
+            }
+            @include md {
+                margin-top: -80px;
+            }
+        }
+    }
+    &.no-contact {
+
+    }
     app-contact {
         ::ng-deep .contact-wrapper {
             margin-top: -200px;
@@ -45,14 +59,7 @@ footer {
     .container {
         display: flex;
         justify-content: flex-end;
-        margin-top: 48px;
-        @include sm {
-            margin-top: -55px;
-        }
-        @include md {
-            margin-top: -80px;
-        }
-      
+
         &.copyright {
             margin-top: 48px;
         }

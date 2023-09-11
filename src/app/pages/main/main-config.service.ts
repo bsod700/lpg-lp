@@ -9,7 +9,7 @@ export class MainConfigService {
   getLogo(): Img {
     return {
       src: 'assets/imgs/logo.svg',
-        alt: 'Tierro',
+        alt: 'landerX',
     }
   }
   getPageConfig(): any {

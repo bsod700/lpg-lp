@@ -29,9 +29,6 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.8,
     }),
-    new BrotliPlugin(),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg|webp)$/i,
-    }),
+    new BrotliPlugin()
   ],
 };

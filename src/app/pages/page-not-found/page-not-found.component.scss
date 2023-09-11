@@ -1,0 +1,75 @@
+@import "src/styles/mixin";
+
+.page-not-found-wrapper {
+   
+    header {
+        text-align: center;
+        padding-top: 216px;
+        background-image: url(/assets/imgs/page-not-found-bg.svg);
+        background-position: center top 400px;
+        background-repeat: no-repeat;
+        background-size: 3840px auto;
+        padding-bottom: 600px;
+        h1 {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+    }
+
+    .cta-wrapper {
+        border-radius: 100px;
+        font-size: 18px;
+        padding: 12px 24px;
+        display: inline-flex;
+        transition: background-color ease-in-out .25s, color ease-in-out .25s;
+        will-change: background-color, color;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        min-width: 200px;
+        gap: 12px;
+        @include md {
+            font-size: 20px;
+            padding: 12px 24px;
+        }
+        img {
+            width: 25px;
+            height: 25px;
+            @include md {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        p {
+            font-weight: 400;
+            font-size: inherit;
+            @include md {
+            }
+        }
+        &.size-big {
+            @include md {
+                min-width: 250px;
+                p {
+                    font-size: 24px;
+                }
+            }
+        
+        }
+
+        &.color-primery {
+            background-color: $primery;
+            border: solid 0px $primery;
+            color: $white;
+            box-shadow: 0px 13px 24px #C5B7FE, 0px -8px 16px #D4DDFA;
+
+            &:hover {
+                background-color: lighten($primery, 10%);
+                color: $white;
+            }
+        }
+    }
+}

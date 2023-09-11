@@ -1,1 +1,16 @@
-<p>page-not-found works!</p>
+<div class="page-not-found-wrapper">
+    <div class="page-content">
+        <app-navbar [componentConfig]="config.navbar" />
+        <header>
+            <div class="container">
+                <h1>{{config.header.title}}</h1>
+                <p class="subtitle">{{config.header.subtitle}}</p>
+                <a class="cta-wrapper color-primery size-big" [attr.aria-label]="config.header.cta" [routerLink]="['/' + config.header.cta.link]">
+                    <p>{{config.header.cta.text}}</p>
+                </a>
+            </div>
+        </header>
+        <app-footer [componentConfig]="config.footer"/>
+    </div>
+   
+</div>

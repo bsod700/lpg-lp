@@ -7,13 +7,12 @@ import { OurServicesComponent } from 'src/app/shared/components/our-services/our
 import { WhyUsComponent } from 'src/app/shared/components/why-us/why-us.component';
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { MainConfigService } from './main-config.service';
-import { BgComponent } from 'src/app/shared/components/bg/bg.component';
 import { FaqComponent } from 'src/app/shared/components/faq/faq.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, HeaderComponent, AboutComponent, OurServicesComponent, WhyUsComponent, FooterComponent, BgComponent, FaqComponent],
+  imports: [CommonModule, NavbarComponent, HeaderComponent, AboutComponent, OurServicesComponent, WhyUsComponent, FooterComponent, FaqComponent],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
