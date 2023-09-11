@@ -7,12 +7,21 @@
         padding-top: 216px;
         margin-bottom: 288px;
         h1 {
-            font-size: 64px;
+            font-size: 40px;
             margin-bottom: 24px;
+            @include lg {
+                font-size: 45px;
+            }
+            @include xl {
+                font-size: 64px;
+            }
         }
         p.subtitle {
             font-size: 18px;
             margin-bottom: 48px;
+            @include lg {
+                font-size: 24px;
+            }
         }
     }
 

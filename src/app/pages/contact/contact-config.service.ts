@@ -38,40 +38,10 @@ export class ContactConfigService {
         title: 'כי כל קמפיין צריך נחיתה טובה',
         paragraph: 'ניהול קמפיינים ועמודי נחיתה בצורה חכמה ויעילה, אינטגרציה חלקה עם גוגל אדס ועמודי נחיתה מתבנית או מותאמים אישית עם מתכנת.'
       },
-      contact: {
-        title: 'מעוניין?',
-        subtitle: 'אשאר פרטים',
-        form: {
-          name: {
-            text: 'מה שמך?',
-            lable: 'שם',
-            error: 'מלאו את השם בבקשה'
-          },
-          email: {
-            text: 'מה כתובת המייל שלך?',
-            lable: 'אימייל',
-            error: 'מלאו את כתובת האימייל בבקשה'
-          },
-          phone: {
-            text: 'מה הטלפון שלך?',
-            lable: 'טלפון',
-            error: 'מלאו את הטלפון בבקשה'
-          },
-          submit: 'צרו איתי קשר!',
-        },
-        message: {
-          title: "תודה על פניתך",
-          subtitle: "ההודעה שלך התקבלה בהצלחה! ניהיה בקשר:)"
-        },
-        logo: {
-          src: 'assets/imgs/logo.svg',
-          alt: 'landerX',
-        }
-      },
       footer: {
         contact: {
-          title: 'מעוניין?',
-          subtitle: 'אשאר פרטים',
+          title: 'מעוניינים?',
+          subtitle: 'השאירו פרטים',
           form: {
             name: {
               text: 'מה שמך?',

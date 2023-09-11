@@ -122,36 +122,6 @@ export class MainConfigService {
           }
         ]
       },
-      contact: {
-        title: 'מעוניין?',
-        subtitle: 'אשאר פרטים',
-        form: {
-          name: {
-            text: 'מה שמך?',
-            lable: 'שם',
-            error: 'מלאו את השם בבקשה'
-          },
-          email: {
-            text: 'מה כתובת המייל שלך?',
-            lable: 'אימייל',
-            error: 'מלאו את כתובת האימייל בבקשה'
-          },
-          phone: {
-            text: 'מה הטלפון שלך?',
-            lable: 'טלפון',
-            error: 'מלאו את הטלפון בבקשה'
-          },
-          submit: 'צרו איתי קשר!',
-        },
-        message: {
-          title: "תודה על פניתך",
-          subtitle: "ההודעה שלך התקבלה בהצלחה! ניהיה בקשר:)"
-        },
-        logo: {
-          src: 'assets/imgs/logo.svg',
-          alt: 'landerX',
-        }
-      },
       faq: {
         title: 'יש לכם שאלה?',
         subtitle: 'שאלות ותשובות',
@@ -183,8 +153,8 @@ export class MainConfigService {
       },
       footer: {
         contact: {
-          title: 'מעוניין?',
-          subtitle: 'אשאר פרטים',
+          title: 'מעוניינים?',
+          subtitle: 'השאירו פרטים',
           form: {
             name: {
               text: 'מה שמך?',
