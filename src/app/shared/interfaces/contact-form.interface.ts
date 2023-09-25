@@ -1,3 +1,4 @@
+// ToDo: refactor errors
 export interface ContactForm {
     name: {
         text: string,
@@ -7,7 +8,8 @@ export interface ContactForm {
       email: {
         text: string,
         lable: string,
-        error: string
+        error: string,
+        error2: string
       },
       phone: {
         text: string,

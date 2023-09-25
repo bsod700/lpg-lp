@@ -20,7 +20,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 12px;
         @include sm {
             flex-direction: row;
@@ -36,6 +36,12 @@
         transform: translateY(0%);
         padding-top: 12px;
         padding-bottom: 12px;
+        .container {
+            flex-direction: column;
+            @include sm {
+                flex-direction: row;
+            }
+        }
         .logo-container {
            
             @include sm {
@@ -48,12 +54,11 @@
                 }
             }
         }
-        app-cta {
-            // display: none;
-            // @include lg {
-            //     display: block;
-            // }
+        .cta-container {
             display: block;
+        }
+        .lang-container {
+            display: none;
         }
     }
     .logo-container {
@@ -68,7 +73,7 @@
             }
         }
     }
-    app-cta {
+   .cta-container {
         display: none;
     }
 }

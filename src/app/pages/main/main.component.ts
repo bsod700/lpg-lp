@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
@@ -8,6 +8,7 @@ import { WhyUsComponent } from 'src/app/shared/components/why-us/why-us.componen
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { MainConfigService } from './main-config.service';
 import { FaqComponent } from 'src/app/shared/components/faq/faq.component';
+import { LangService } from 'src/app/shared/lang.service';
 
 @Component({
   selector: 'app-main',
@@ -16,7 +17,18 @@ import { FaqComponent } from 'src/app/shared/components/faq/faq.component';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
+  langService: LangService = inject(LangService)
   mainConfigService: MainConfigService = inject(MainConfigService)
   config = this.mainConfigService.getPageConfig()
+
+  ngOnInit() {
+    this.getCurrentLang()
+  }
+
+  getCurrentLang(): void {
+    this.langService.getLang().subscribe((currentLang) => {
+      this.config = currentLang === 'he' ? this.mainConfigService.getPageConfig() : this.mainConfigService.getPageConfigEnglish()
+    });
+  }
 }

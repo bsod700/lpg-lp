@@ -21,7 +21,7 @@
               <mat-label>{{componentConfig.form.email.lable}}</mat-label>
               <input matInput type="email" [placeholder]="componentConfig.form.email.lable" [value]="componentConfig.form.email.lable" name="email" formControlName="email" id="email" aria-labelledby="email" required>
               <mat-error *ngIf="contactForm.get('email')?.hasError('email') && !contactForm.get('email')?.hasError('required')">
-               כתובת אימייל לא תקינה
+                {{componentConfig.form.email.error2}}
               </mat-error>
               <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
                 {{componentConfig.form.email.error}}

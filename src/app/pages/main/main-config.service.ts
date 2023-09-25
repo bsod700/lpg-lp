@@ -35,7 +35,7 @@ export class MainConfigService {
           size: 'big',
           color: 'primery',
         },
-        title: 'כי כל קמפיין צריך נחיתה טובה',
+        title: 'כי כל סטרטאפ צריך נחיתה טובה',
         paragraph: 'ניהול קמפיינים ועמודי נחיתה בצורה חכמה ויעילה, אינטגרציה חלקה עם גוגל אדס ועמודי נחיתה מתבנית או מותאמים אישית עם מתכנת.'
       },
       about: {
@@ -78,18 +78,18 @@ export class MainConfigService {
           {
             img: {
               src: 'assets/imgs/services-prices.webp',
-              alt: 'מחירים תחרותיים',
+              alt: 'מיקרו קופי',
             },
-            title: 'מחירים תחרותיים',
-            paragraph: 'אנו מציעים שירותים מקצועיים במחירים תחרותיים, כדי להבטיח שאתם מקבלים את הערך הטוב ביותר לכסף שלכם.'
+            title: 'קופי ומיקרו קופי',
+            paragraph: 'אין צורך לחפש כתיבה חיצונית או להתמודד עם תוכן לא מדויק. אנו מייצרים את הקופי והמיקרו-קופי לעמוד הנחיתה ולקמפיינים שלכם.'
           },
           {
             img: {
               src: 'assets/imgs/services-self.webp',
-              alt: 'התאמה אישית וגמישות',
+              alt: 'תכנות ומהירות',
             },
-            title: 'התאמה אישית וגמישות',
-            paragraph: 'אנו מבינים שכל שירות או מוצר הוא ייחודי, ולכן אנו מציעים פתרונות מותאמים אישית שמתחשבים בצרכים ובתקציב שלכם. הגמישות שלנו מאפשרת לנו להתאים את השירותים שלנו בדיוק למה שאתם זקוקים לו, ולהבטיח שאתם מרוצים מהתוצאות.'
+            title: 'תכנות ומהירות',
+            paragraph: 'עמודי הנחיתה שלנו מותאמים לטעינה מהירה בעזרת קוד יעיל ומתוחזק עם מתכנת בכיר בצוות, כך שלקוחותיכם לא יחכו.'
           },
           {
             img: {
@@ -97,7 +97,7 @@ export class MainConfigService {
               alt: 'אחזקה ותמיכה טכנית',
             },
             title: 'אחזקה ותמיכה טכנית',
-            paragraph: 'אנו מספקים ללקוחותינו מערך אחזקה שמבטיחה "ראש שקט", ותמיכה טכנית מבוססת מאגר ידע גדול. המקצוענות שלנו וההתמקדות בפרטים מבטיחים שהתהליכים הטכניים המורכבים נעשים בקלות וביעילות, ואתם יכולים להתמקד במה שחשוב לכם.'
+            paragraph: 'אנו מספקים ללקוחותינו מערך אחזקה שמבטיחה "ראש שקט", ותמיכה טכנית מבוססת מאגר ידע גדול. ואתם יכולים להתמקד במה שחשוב לכם.'
           }
         ]
       },
@@ -117,8 +117,8 @@ export class MainConfigService {
             text: 'אנו מתמקדים במדדים ובנתונים, כדי להבטיח שאתם מקבלים תוצאות ממשיות ומדויקות. אנו מעקבים אחרי ההצלחה של הקמפיינים שלכם ומספקים לכם דוחות מפורטים.'
           },
           {
-            title: 'מחירים תחרותיים',
-            text: 'אנו מציעים שירותים מקצועיים במחירים תחרותיים, כדי להבטיח שאתם מקבלים את הערך הטוב ביותר לכסף שלכם..'
+            title: 'יתרונות טכנולוגיים',
+            text: 'אנו משתמשים בטכנולוגיה המתקדמת ביותר לבניית עמודי נחיתה מאפס ניהול הקמפיינים שלכם מתבצע באופן חצי אוטומטי, כולל שימוש בסקריפטים מתקדמים לפרפורמנס מיטבי.'
           }
         ]
       },
@@ -128,26 +128,26 @@ export class MainConfigService {
         qs: [
           {
             title: 'איך בונים עמוד נחיתה שיהיה יעיל?',
-            answer: 'תשובה: על עמוד הנחיתה לכלול עיצוב נקי ומקצועי, קריאה חזקה לפעולה, תוכן רלוונטי ואופטימיזציה למנועי חיפוש.'
+            answer: 'על עמוד הנחיתה לכלול עיצוב נקי ומקצועי, קריאה חזקה לפעולה, תוכן רלוונטי ואופטימיזציה למנועי חיפוש.'
           },
           {
             title: 'איך ממודדים את הצלחת הקמפיין שלי?',
-            answer: 'תשובה: השתמשו בכלים כמו Google Analytics למדידת תעבורה, קליקים, קצב המרה ו-ROI, ועקבו אחר המדדים באופן תדיר.'
+            answer: 'השתמשו בכלים כמו Google Analytics למדידת תעבורה, קליקים, קצב המרה ו-ROI, ועקבו אחר המדדים באופן תדיר.'
           },
           {
             title: 'איך מקבלים תעבורה איכותית לעמוד הנחיתה שלי?',
-            answer: 'תשובה: שלב שיטות שיווק דיגיטלי כמו פרסום ממומן ושיווק תוכן כדי למשוך קהל מכוון.'
+            answer: 'שלב שיטות שיווק דיגיטלי כמו פרסום ממומן ושיווק תוכן כדי למשוך קהל מכוון.'
           },
           {
             title: 'איך מבטיחים שהעמוד הנחיתה מתאים למכשירים ניידים?',
-            answer: 'תשובה: השתמשו בעיצוב רספונסיבי שמתאים את עצמו לכל סוגי המכשירים ובדקו את העמוד במכשירים שונים לוודא שהוא נראה טוב.'
+            answer: 'השתמשו בעיצוב רספונסיבי שמתאים את עצמו לכל סוגי המכשירים ובדקו את העמוד במכשירים שונים לוודא שהוא נראה טוב.'
           },  {
             title: 'איך יכולים לייעל את ההוצאות על קמפיינים ממומנים?',
-            answer: 'תשובה: ניהול תקציב מדוד וממוקד, שימוש במילות מפתח רלוונטיות ובדיקות תדירות של הביצועים יכולים להביא לייעול ההוצאות.'
+            answer: 'ניהול תקציב מדוד וממוקד, שימוש במילות מפתח רלוונטיות ובדיקות תדירות של הביצועים יכולים להביא לייעול ההוצאות.'
           },
           {
-            title: 'מה זה עמוד נחיתה ולמה אני צריך את זה?',
-            answer: 'string'
+            title: 'מה זה עמוד נחיתה ולמה אנחנו צריכים את זה?',
+            answer: 'עמוד נחיתה הוא ה"נקודת חיבור" בינך לבין לקוחות פוטנציאליים, וצריך אותו כדי לספק מידע ממומקד ולהגדיל את הסיכוי למכירה.'
           }
         ]
       },
@@ -164,7 +164,8 @@ export class MainConfigService {
             email: {
               text: 'מה כתובת המייל שלך?',
               lable: 'אימייל',
-              error: 'מלאו את כתובת האימייל בבקשה'
+              error: 'מלאו את כתובת האימייל בבקשה',
+              error2: 'כתובת אימייל לא תקינה',
             },
             phone: {
               text: 'מה הטלפון שלך?',
@@ -176,6 +177,186 @@ export class MainConfigService {
           message: {
             title: "תודה על פניתך",
             subtitle: "ההודעה שלך התקבלה בהצלחה! ניהיה בקשר:)"
+          },
+          logo: {
+            src: 'assets/imgs/logo.svg',
+            alt: 'landerX',
+          }
+        },
+        logoImg: {
+          src: 'assets/imgs/logo.svg',
+          alt: 'landerX',
+        },
+        copyright:
+          '©2023 LanderX. All rights reserved. The content on this landing page, including text, images, videos, and design, is protected by copyright and may not be used without the express permission of LanderX.',
+      },
+    }
+  }
+  getPageConfigEnglish(): any {
+    return {
+      navbar: {
+        logoImg: {
+          src: 'assets/imgs/logo.svg',
+          alt: 'landerX',
+        },
+        cta: {
+          text: 'Start Now!',
+          size: 'small',
+          color: 'primery',
+        },
+      },
+      header: {
+        img: {
+          src: 'assets/imgs/header-img-en.webp',
+          alt: 'WOW',
+        },
+        cta: {
+          text: 'Start Now!',
+          size: 'big',
+          color: 'primery',
+        },
+        title: 'Because every startup needs a good landing',
+        paragraph: 'Managing campaigns and landing pages in a smart and efficient way, seamless integration with Google Ads and landing pages from a template or customized with a programmer.'
+      },
+      about: {
+        title: 'Who we are?',
+        subtitle: 'About Us',
+        paragraph: [
+          'We are a young and dynamic company that specializes in building fast and well-designed landing pages, and managing funded Google campaigns.',
+          'Our mission is to make your campaigns as successful and efficient as possible. We believe in a combination of technology, AI, design and digital marketing to bring you the best results.',
+          'We are proud of our competitive prices, and are committed to offering you professional and personal service. With us, you are not just customers - you are partners.'
+        ]
+      },
+      ourServices: {
+        title: 'what are we doing?',
+        subtitle: 'Our Services',
+        cards: [
+          {
+            img: {
+              src: 'assets/imgs/services-lp.webp',
+              alt: 'Designing Landing Pages',
+            },
+            title:  'Designing Landing Pages',
+            paragraph: 'Customized with a programmer using the most advanced technology, and the use of AI. Directly connected to the Google Ads system and intended to increase conversions.'
+          },
+          {
+            img: {
+              src: 'assets/imgs/services-ad.webp',
+              alt: 'Managing Google campaigns',
+            },
+            title: 'Managing Google Campaigns',
+            paragraph: 'We manage your campaigns on Google professionally to ensure you get the best value for your investment.'
+          },
+          {
+            img: {
+              src: 'assets/imgs/services-lids.webp',
+              alt: 'Lead Generation',
+            },
+            title: 'Lead Generation',
+            paragraph: 'The combination of advanced technology, AI, and smooth integration with Google Ads allows us to generate high-quality leads for you in an automated and efficient manner.'
+          },
+          {
+            img: {
+              src: 'assets/imgs/services-prices.webp',
+              alt: 'Copy & Micro-Copy',
+            },
+            title: 'Copy & Micro-Copy',
+            paragraph: 'There\'s no need to seek external writing or deal with inaccurate content. We create the copy and micro-copy for your landing page and campaigns'
+          },
+          {
+            img: {
+              src: 'assets/imgs/services-self.webp',
+              alt: 'Programming and Speed',
+            },
+            title: 'Programming and Speed',
+            paragraph: 'Our landing pages are optimized for fast loading with efficient code and are maintained by a senior programmer on the team, so your customers won\'t wait.'
+          },
+          {
+            img: {
+              src: 'assets/imgs/services-settings.webp',
+              alt: 'Maintenance & Technical Support',
+            },
+            title: 'Maintenance & Technical Support',
+            paragraph: 'We provide our customers with a maintenance system that ensures peace of mind, and technical support based on a large knowledge base. And you can focus on what\'s important to you.'
+          }
+        ]
+      },
+      whyUs: {
+        title: 'So why choose us',
+        img: {
+          src: 'assets/imgs/why-us-img-en.webp',
+          alt: 'So why choose us',
+        },
+        bullets: [
+          {
+            title: 'Professional expertise',
+            text: 'We specialize in building fast and well-designed landing pages, and in managing funded campaigns on Google, to ensure you get the best results.'
+          },
+          {
+            title: 'Measurable results',
+            text: 'We focus on metrics and data to ensure you get tangible and accurate results. We monitor the success of your campaigns and provide you with detailed reports.'
+          },
+          {
+            title: 'Technological advantages',
+            text: 'We use the most advanced technology to build landing pages from scratch. The management of your campaigns is done semi-automatically, including the use of advanced scripts for optimal performance.'
+          }
+        ]
+      },
+      faq: {
+        title: 'Do you have a question?',
+        subtitle: 'FAQ',
+        qs: [
+          {
+            title: 'How do you build an effective landing page?',
+            answer: 'The landing page should include a clean and professional design, a strong call to action, relevant content, and optimization for search engines.'
+          },
+          {
+            title: 'How do I measure the success of my campaign?',
+            answer: 'Use tools like Google Analytics to measure traffic, clicks, conversion rate, and ROI, and monitor the metrics regularly.'
+          },
+          {
+            title: 'How do I get quality traffic to my landing page?',
+            answer: 'Integrate digital marketing methods such as paid advertising and content marketing to attract a targeted audience.'
+          },
+          {
+            title: 'How do you ensure the landing page is mobile-friendly?',
+            answer: 'Use responsive design that adapts to all types of devices and test the page on different devices to ensure it looks good.'
+          },  {
+            title: 'How can we optimize the costs of funded campaigns?',
+            answer: 'Managing a measured and focused budget, using relevant keywords, and regularly checking performance can lead to cost optimization.'
+          },
+          {
+            title: 'What is a landing page and why do we need it?',
+            answer: 'A landing page is the \'connection point\' between you and potential customers, and it\'s needed to provide focused information and increase the chance of a sale.'
+          }
+        ]
+      },
+      footer: {
+        contact: {
+          title: 'Interested?',
+          subtitle: 'Leave your details',
+          form: {
+            name: {
+              text: 'What is your name?',
+              lable: 'Name',
+              error: 'Please fill in the name'
+            },
+            email: {
+              text: 'What is your email address?',
+              lable: 'Email',
+              error: 'Please fill in the email address',
+              error2: 'Email address is\'nt correct',
+            },
+            phone: {
+              text: 'What is your phone number?',
+              lable: 'Phone number',
+              error: 'Please fill in the phone number'
+            },
+            submit: 'Contact me!',
+          },
+          message: {
+            title: 'Thank you for contacting',
+            subtitle: 'Your message has been received successfully! We\'ll be in touch :)'
           },
           logo: {
             src: 'assets/imgs/logo.svg',

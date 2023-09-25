@@ -1,0 +1,13 @@
+<div class="lang-wrapper">
+    <div class="selected-lang">
+        <img [src]="selectedLang.img" [alt]="selectedLang.title">
+    </div>
+    <div class="langs shadow">
+        <ng-container *ngFor="let lang of langs">
+            <div class="lang" [ngClass]="{'selected': lang.selected}" (click)="setLang(lang.name)">
+                <img [src]="lang.img" [alt]="lang.title">
+                <span>{{lang.title}}</span>
+            </div>
+        </ng-container>
+    </div>
+</div>

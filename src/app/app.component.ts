@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2, inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { LangService } from './shared/lang.service';
 
-declare let gtag: Function;
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,16 +12,30 @@ declare let gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'lpg';
-//   constructor(private router: Router) {
-//     this.router.events.subscribe(event => {
-//         if (event instanceof NavigationEnd) {
-//             // Send a pageview event to GTM on route changes
-//             gtag('config', 'G-M5D30QTTZ0', {
-//                 'page_path': event.urlAfterRedirects
-//             });
-//         }
-//     });
-// }
+  route: ActivatedRoute = inject(ActivatedRoute)
+  router: Router = inject(Router)
+  langService: LangService = inject(LangService)
+  renderer: Renderer2 = inject(Renderer2)
+  document: Document = inject(DOCUMENT)
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const currentLang = this.langService.getCurrentLang()
+      const lang = params['lang'] || currentLang;
+      this.langService.setLang(lang)
+      this.setHtmlLangAndDir(lang);
+    });
+
+    this.langService.getLang().subscribe((lang) => {
+      this.setHtmlLangAndDir(lang);
+    });
+  }
+
+  private setHtmlLangAndDir(lang: string) {
+    this.renderer.setAttribute(this.document.documentElement, 'lang', lang);
+    const dir = lang === 'he' ? 'rtl' : 'ltr';
+    this.renderer.setAttribute(this.document.body, 'dir', dir);
+  }
 }

@@ -78,9 +78,13 @@
     .bullets {
         .bullet {
             margin-bottom: 24px;
+
             h4 {
                 font-size: 24px;
                 margin-bottom: 6px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
                 &::before {
                     content: '';
                     background-image: url(/assets/imgs/check.svg);
@@ -90,7 +94,6 @@
                     background-repeat: no-repeat;
                     background-size: contain;
                     display: inline-block;
-                    margin-left: 6px;
                 }
             }
             p {
