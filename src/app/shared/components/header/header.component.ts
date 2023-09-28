@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Img } from '../../interfaces/img.interface';
 import { Cta } from '../../interfaces/cta.interface';
@@ -10,7 +10,8 @@ import { HeroImgComponent } from './hero-img/hero-img.component';
   standalone: true,
   imports: [CommonModule, CtaComponent, HeroImgComponent],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   @Input() componentConfig!: {

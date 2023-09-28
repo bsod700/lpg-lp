@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageNotFoundConfigService } from './page-not-found-config.service';
 import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, NavbarComponent, FooterComponent, CtaComponent, RouterModule],
   templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.scss']
+  styleUrls: ['./page-not-found.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageNotFoundComponent {
   pageNotFoundConfigService: PageNotFoundConfigService = inject(PageNotFoundConfigService)

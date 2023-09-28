@@ -1,13 +1,11 @@
-import { Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import { environment } from 'src/environments/environment';
 import { ContactForm } from '../../interfaces/contact-form.interface';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Img } from '../../interfaces/img.interface';
 import {MatButtonModule} from '@angular/material/button';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
@@ -15,9 +13,10 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatTooltipModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
   @Input() componentConfig!: {

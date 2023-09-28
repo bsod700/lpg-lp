@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { bullet } from '../../interfaces/bullet.interface';
 import { Img } from '../../interfaces/img.interface';
@@ -8,7 +8,8 @@ import { Img } from '../../interfaces/img.interface';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './why-us.component.html',
-  styleUrls: ['./why-us.component.scss']
+  styleUrls: ['./why-us.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WhyUsComponent {
   @Input() componentConfig!: {

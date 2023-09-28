@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogoComponent } from '../logo/logo.component';
 import { Img } from '../../interfaces/img.interface';
@@ -12,7 +12,8 @@ import { LangComponent } from '../lang/lang.component';
   standalone: true,
   imports: [CommonModule, LogoComponent, CtaComponent, RouterModule, LangComponent],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
   scrolled = false;

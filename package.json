@@ -5,12 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:pure": "ng build && node purifycss.config.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run lpg:serve-ssr",
     "serve:ssr": "node dist/lpg/server/main.js",
     "build:ssr": "ng build && ng run lpg:server",
-    "prerender": "ng run lpg:prerender"
+    "prerender": "ng run lpg:prerender",
+    "run:build:server": "http-server -p 8080 -c-1 dist/lpg/browser"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +52,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "purify-css": "^1.2.5",
     "typescript": "~5.1.3",
     "webpack-cli": "^5.1.4"
   }

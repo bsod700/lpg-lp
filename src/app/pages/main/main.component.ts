@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
@@ -15,7 +15,8 @@ import { LangService } from 'src/app/shared/lang.service';
   standalone: true,
   imports: [CommonModule, NavbarComponent, HeaderComponent, AboutComponent, OurServicesComponent, WhyUsComponent, FooterComponent, FaqComponent],
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent implements OnInit {
   langService: LangService = inject(LangService)

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Img } from '../../interfaces/img.interface';
 import { Cta } from '../../interfaces/cta.interface';
@@ -9,7 +9,8 @@ import { ContactComponent } from '../contact/contact.component';
   standalone: true,
   imports: [CommonModule, ContactComponent],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
   @Input() componentConfig!: {

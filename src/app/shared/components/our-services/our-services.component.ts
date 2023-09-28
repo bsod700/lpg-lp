@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { card } from '../../interfaces/card.interface';
 
@@ -7,7 +7,8 @@ import { card } from '../../interfaces/card.interface';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './our-services.component.html',
-  styleUrls: ['./our-services.component.scss']
+  styleUrls: ['./our-services.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OurServicesComponent {
   @Input() componentConfig!: {

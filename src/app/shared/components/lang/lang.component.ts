@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Lang } from '../../interfaces/lang';
 import { LangService } from '../../lang.service';
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './lang.component.html',
-  styleUrls: ['./lang.component.scss']
+  styleUrls: ['./lang.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LangComponent implements OnInit {
   langService: LangService = inject(LangService)
