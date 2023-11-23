@@ -8,7 +8,7 @@ import { WhyUsComponent } from 'src/app/shared/components/why-us/why-us.componen
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { MainConfigService } from './main-config.service';
 import { FaqComponent } from 'src/app/shared/components/faq/faq.component';
-import { LangService } from 'src/app/shared/lang.service';
+import { LangService } from '@bsod700/lib';
 
 @Component({
   selector: 'app-main',

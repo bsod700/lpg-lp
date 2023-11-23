@@ -12,6 +12,7 @@ export class ContactConfigService {
         alt: 'landerX',
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getPageConfig(): any {
     return {
       navbar: {

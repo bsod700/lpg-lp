@@ -5,6 +5,7 @@
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/pdf "access plus 1 year"
   ExpiresByType text/x-javascript "access plus 1 year"
@@ -14,6 +15,12 @@
   ExpiresDefault "access plus 1 year"
 </IfModule>
 ## EXPIRES CACHING ##
+
+## MIME TYPES FOR WEBP ##
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+## MIME TYPES FOR WEBP ##
 
 RewriteEngine On
 # If an existing asset or directory is requested go to it as it is

@@ -35,7 +35,7 @@
                 margin-top: -40px;
             }
         }
-        &:lang(us) {
+        &:lang(en) {
             @include md {
                 margin-left: -40px;
                 margin-top: -40px;
@@ -106,14 +106,15 @@
             font-size: 45px;
         }
         @include xl {
-            font-size: 60px;
+            font-size: 50px;
+        }
+
+        ::ng-deep span {
+            color: $primery;
         }
     }
     p {
         margin-bottom: 24px;
         font-size: 18px;
-        @include lg {
-            font-size: 24px;
-        }
     }
 }

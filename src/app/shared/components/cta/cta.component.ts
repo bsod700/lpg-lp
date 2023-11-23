@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Cta } from '../../interfaces/cta.interface';
 
-declare let dataLayer: any[];
+declare let dataLayer: unknown[];
 @Component({
   selector: 'app-cta',
   standalone: true,

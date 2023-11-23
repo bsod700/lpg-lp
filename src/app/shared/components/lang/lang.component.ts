@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LangService } from '@bsod700/lib';
 import { Lang } from '../../interfaces/lang';
-import { LangService } from '../../lang.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lang',
@@ -14,9 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LangComponent implements OnInit {
   langService: LangService = inject(LangService)
-  router: Router = inject(Router)
-  currentLang: string = 'he';
-  selectedLang!: Lang;
+  selectedLang!: Lang
   langs: Lang[] = [
     {
       img: 'assets/imgs/langs/he.webp',
@@ -26,30 +23,22 @@ export class LangComponent implements OnInit {
     },
     {
       img: 'assets/imgs/langs/us.webp',
-      name: 'us',
+      name: 'en',
       title: 'English',
       selected: false
     }
   ]
 
   ngOnInit() {
-    this.getCurrentLang()
+    this.langService.setLangs(this.langs)
+    const langlang = this.langService.getCurrentLang()
+    this.langService.updateSelectedLang(langlang)
+    this.selectedLang = this.langService.getCurrentSelectedLang()
   }
 
-  getCurrentLang(): void {
-    this.langService.getLang().subscribe((currentLang) => {
-      this.currentLang = currentLang
-      this.selectedLang = this.langs.find((lang) => lang.name === currentLang) || this.langs[0]
-      this.langs.forEach((lang) => {
-        lang.selected = lang.name === currentLang;
-      })
-    });
-  }
+
   setLang(lang: string): void {
-    this.langService.setLang(lang)
-    this.router.navigate([], {
-      queryParams: { lang },
-      queryParamsHandling: 'merge' 
-    });
+    this.langService.updateSelectedLang(lang)
+    this.selectedLang = this.langService.getCurrentSelectedLang()
   }
 }

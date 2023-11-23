@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Img } from '../../interfaces/img.interface';
-import { Cta } from '../../interfaces/cta.interface';
 import { ContactComponent } from '../contact/contact.component';
 
 @Component({
@@ -15,6 +14,7 @@ import { ContactComponent } from '../contact/contact.component';
 export class FooterComponent {
   @Input() componentConfig!: {
     logoImg: Img,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     contact: any,
     copyright: string
   }

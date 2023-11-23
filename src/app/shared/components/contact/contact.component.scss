@@ -75,10 +75,11 @@
         font-size: 20px;
         padding: 24px 24px;
         min-width: 200px;
-        border-radius: 35px;
+        border-radius: 16px;
         background-color: $primery;
         transition: background-color ease-in-out .15s;
         will-change: background-color;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
         &:hover {
             background-color: lighten($primery, 10);
         }

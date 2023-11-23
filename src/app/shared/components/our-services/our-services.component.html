@@ -6,7 +6,7 @@
             <ng-container *ngFor="let card of componentConfig.cards">
                 <div class="card">
                     <div class="img-container">
-                        <img [src]="card.img.src" [alt]="card.img.alt">
+                        <img [src]="card.img.src" [alt]="card.img.alt" loading="lazy">
                     </div>
                     <h4>{{card.title}}</h4>
                     <p>{{card.paragraph}}</p>

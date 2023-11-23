@@ -12,6 +12,7 @@ export class MainConfigService {
         alt: 'landerX',
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getPageConfig(): any {
     return {
       navbar: {
@@ -36,14 +37,14 @@ export class MainConfigService {
           color: 'primery',
         },
         title: 'כי כל סטרטאפ צריך נחיתה טובה',
-        paragraph: 'ניהול קמפיינים ועמודי נחיתה בצורה חכמה ויעילה, אינטגרציה חלקה עם גוגל אדס ועמודי נחיתה מתבנית או מותאמים אישית עם מתכנת.'
+        paragraph: 'ניהול קמפיינים ועמודי נחיתה בצורה חכמה ויעילה, אינטגרציה חלקה עם גוגל אדס ועמודי נחיתה מותאמים אישית עם מתכנת.'
       },
       about: {
-        title: 'מי אנחנו?',
+        title: 'התמורה הטובה ביותר להשקעה שלכם',
         subtitle: 'קצת עלינו',
         paragraph: [
-          'אנחנו חברה צעירה ודינמית שמתמחה בבניית עמודי נחיתה מהירים ומעוצבים, ובניהול קמפיינים ממומנים בגוגל.',
           'המשימה שלנו היא להפוך את הקמפיינים שלכם למוצלחים ויעילים ככל האפשר. אנחנו מאמינים בשילוב של טכנולוגיה, AI, עיצוב ושיווק דיגיטלי כדי להביא לכם את התוצאות הטובות ביותר.',
+          'אנחנו חברה צעירה ודינמית שמתמחה בבניית עמודי נחיתה מהירים ומעוצבים, ובניהול קמפיינים ממומנים בגוגל.',
           'אנחנו גאים במחירים התחרותיים שלנו, ומחויבים להציע לכם שירות מקצועי ואישי. אצלנו, אתם לא רק לקוחות - אתם שותפים.'
         ]
       },
@@ -57,7 +58,7 @@ export class MainConfigService {
               alt: 'בניית עמודי נחיתה מעוצבים',
             },
             title: 'בניית עמודי נחיתה מעוצבים',
-            paragraph: 'מותאמים אישים עם מתכנת בטכנולוגיה הכי מתקדמת, ושימוש ב-AI. מחוברים ישירות למערכת גוגל אדס ומיועדים להגברת המרות.'
+            paragraph: 'מותאמים אישים עם מתכנת בטכנולוגיה הכי מתקדמת, ושימוש ב-AI. הגברת המרות על ידי חיבור למערכת גוגל אדס.'
           },
           {
             img: {
@@ -97,7 +98,7 @@ export class MainConfigService {
               alt: 'אחזקה ותמיכה טכנית',
             },
             title: 'אחזקה ותמיכה טכנית',
-            paragraph: 'אנו מספקים ללקוחותינו מערך אחזקה שמבטיחה "ראש שקט", ותמיכה טכנית מבוססת מאגר ידע גדול. ואתם יכולים להתמקד במה שחשוב לכם.'
+            paragraph: 'אנו מספקים ללקוחותינו מערך אחזקה שמבטיח "ראש שקט", ותמיכה טכנית מבוססת מאגר ידע גדול. ואתם יכולים להתמקד במה שחשוב לכם.'
           }
         ]
       },
@@ -118,7 +119,7 @@ export class MainConfigService {
           },
           {
             title: 'יתרונות טכנולוגיים',
-            text: 'אנו משתמשים בטכנולוגיה המתקדמת ביותר לבניית עמודי נחיתה מאפס ניהול הקמפיינים שלכם מתבצע באופן חצי אוטומטי, כולל שימוש בסקריפטים מתקדמים לפרפורמנס מיטבי.'
+            text: 'אנו משתמשים בטכנולוגיה המתקדמת ביותר לבניית עמודי נחיתה מאפס ניהול הקמפיינים שלכם מתבצע באופן חצי אוטומטי, כולל שימוש בהאינטיליגנציה ההיברידית - משלבת בין מומחיות אנושית, לאלגוריתמים של למידת מכונה, בכדי לשפר את דיוק ויעילות אנליטיקת השיווק.'
           }
         ]
       },
@@ -157,18 +158,18 @@ export class MainConfigService {
           subtitle: 'השאירו פרטים',
           form: {
             name: {
-              text: 'מה שמך?',
+              text: 'שם',
               lable: 'שם',
               error: 'מלאו את השם בבקשה'
             },
             email: {
-              text: 'מה כתובת המייל שלך?',
+              text: 'אימייל',
               lable: 'אימייל',
               error: 'מלאו את כתובת האימייל בבקשה',
               error2: 'כתובת אימייל לא תקינה',
             },
             phone: {
-              text: 'מה הטלפון שלך?',
+              text: 'טלפון',
               lable: 'טלפון',
               error: 'מלאו את הטלפון בבקשה'
             },
@@ -192,6 +193,7 @@ export class MainConfigService {
       },
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getPageConfigEnglish(): any {
     return {
       navbar: {
@@ -215,20 +217,20 @@ export class MainConfigService {
           size: 'big',
           color: 'primery',
         },
-        title: 'Because every startup needs a good landing',
-        paragraph: 'Managing campaigns and landing pages in a smart and efficient way, seamless integration with Google Ads and landing pages from a template or customized with a programmer.'
+        title: 'Every <span>startup</span> needs a good landing',
+        paragraph: 'Managing high preforming campaigns and landing pages  build by a developer, along with a seamless  Google Ads integration.'
       },
       about: {
-        title: 'Who we are?',
+        title: 'The best value for your investment',
         subtitle: 'About Us',
         paragraph: [
-          'We are a young and dynamic company that specializes in building fast and well-designed landing pages, and managing funded Google campaigns.',
           'Our mission is to make your campaigns as successful and efficient as possible. We believe in a combination of technology, AI, design and digital marketing to bring you the best results.',
-          'We are proud of our competitive prices, and are committed to offering you professional and personal service. With us, you are not just customers - you are partners.'
+          'We are a young and dynamic company that specializes in building fast and well-designed landing pages for startups, and managing funded Google campaigns.',
+          'We are proud of our competitive prices, and are committed to offering you professional and personal service. With us, you are not just a customer - you are partner.'
         ]
       },
       ourServices: {
-        title: 'what are we doing?',
+        title: 'What are We Doing?',
         subtitle: 'Our Services',
         cards: [
           {
@@ -237,7 +239,7 @@ export class MainConfigService {
               alt: 'Designing Landing Pages',
             },
             title:  'Designing Landing Pages',
-            paragraph: 'Customized with a programmer using the most advanced technology, and the use of AI. Directly connected to the Google Ads system and intended to increase conversions.'
+            paragraph: 'Customized with a developer using the most advanced technology, and AI. increasing conversions by implement direct connection to Google Ads.'
           },
           {
             img: {
@@ -253,7 +255,7 @@ export class MainConfigService {
               alt: 'Lead Generation',
             },
             title: 'Lead Generation',
-            paragraph: 'The combination of advanced technology, AI, and smooth integration with Google Ads allows us to generate high-quality leads for you in an automated and efficient manner.'
+            paragraph: 'Our combination of advanced technology, AI, and smooth integration with Google Ads allows us to generate high-quality leads for you in an automated and efficient manner.'
           },
           {
             img: {
@@ -261,14 +263,14 @@ export class MainConfigService {
               alt: 'Copy & Micro-Copy',
             },
             title: 'Copy & Micro-Copy',
-            paragraph: 'There\'s no need to seek external writing or deal with inaccurate content. We create the copy and micro-copy for your landing page and campaigns'
+            paragraph: 'No need to seek external writing or deal with inaccurate content. We create the copy and micro-copy for your landing page and campaigns'
           },
           {
             img: {
               src: 'assets/imgs/services-self.webp',
-              alt: 'Programming and Speed',
+              alt: 'Programming & Speed',
             },
-            title: 'Programming and Speed',
+            title: 'Programming & Speed',
             paragraph: 'Our landing pages are optimized for fast loading with efficient code and are maintained by a senior programmer on the team, so your customers won\'t wait.'
           },
           {
@@ -277,15 +279,15 @@ export class MainConfigService {
               alt: 'Maintenance & Technical Support',
             },
             title: 'Maintenance & Technical Support',
-            paragraph: 'We provide our customers with a maintenance system that ensures peace of mind, and technical support based on a large knowledge base. And you can focus on what\'s important to you.'
+            paragraph: 'We provide our customers with a maintenance system that ensures peace of mind, and technical support based on a large knowledge base. So you can focus on what\'s important to you.'
           }
         ]
       },
       whyUs: {
-        title: 'So why choose us',
+        title: 'Why choose us',
         img: {
           src: 'assets/imgs/why-us-img-en.webp',
-          alt: 'So why choose us',
+          alt: 'Why choose us',
         },
         bullets: [
           {
@@ -298,12 +300,12 @@ export class MainConfigService {
           },
           {
             title: 'Technological advantages',
-            text: 'We use the most advanced technology to build landing pages from scratch. The management of your campaigns is done semi-automatically, including the use of advanced scripts for optimal performance.'
+            text: 'We use the most advanced technology to build landing pages from scratch. The management of your campaigns is done Hybrid intelligence combining Advanced AI technology together with human monitoring , including the use of advanced scripts for optimal performance. '
           }
         ]
       },
       faq: {
-        title: 'Do you have a question?',
+        title: 'Do you have any question?',
         subtitle: 'FAQ',
         qs: [
           {
@@ -337,18 +339,18 @@ export class MainConfigService {
           subtitle: 'Leave your details',
           form: {
             name: {
-              text: 'What is your name?',
+              text: 'Name',
               lable: 'Name',
               error: 'Please fill in the name'
             },
             email: {
-              text: 'What is your email address?',
+              text: 'Email',
               lable: 'Email',
               error: 'Please fill in the email address',
               error2: 'Email address is\'nt correct',
             },
             phone: {
-              text: 'What is your phone number?',
+              text:  'Phone number',
               lable: 'Phone number',
               error: 'Please fill in the phone number'
             },

@@ -16,13 +16,24 @@
                 width: 415px;
                 height: 305px;
                 top: -350px;
-                left: calc(50% + 135px);
+               
                 border: 2px dashed #3C8BD9;
                 @include xl {
                     width: 855px;
                     height: 550px;
                     top: -260px;
-                    left: calc(50% + 45px);
+                }
+                &:lang(he) {
+                    left: calc(50% + 135px);
+                    @include xl {
+                        left: calc(50% + 45px);
+                    }
+                }
+                &:lang(en) {
+                    right: calc(50% + 135px);
+                    @include xl {
+                        right: calc(50% + 45px);
+                    }
                 }
             }
         }
@@ -64,7 +75,6 @@
         }
         @include xl {
             flex: 0 0 450px;
-            margin-bottom: -60px;
         }
         img {
             width: 380px;

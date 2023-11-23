@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ContactForm } from '../../interfaces/contact-form.interface';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +13,7 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, FormsModule, MatInputModule, MatFormFieldModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, MatInputModule, MatFormFieldModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
