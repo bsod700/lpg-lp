@@ -1,14 +1,15 @@
-import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject, OnChanges, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormArray, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ContactForm } from '../../interfaces/contact-form.interface';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Img } from '../../interfaces/img.interface';
 import {MatButtonModule} from '@angular/material/button';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { CheckboxItem } from '../../interfaces/checkbox-item.interface';
+import { Img, isDeepEqual } from '@bsod700/lib';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +19,8 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactComponent {
+export class ContactComponent implements OnChanges, OnInit {
+  @Output() sentMessage = new EventEmitter<boolean>(false)
   @Input() componentConfig!: {
     title: string,
     subtitle: string,
@@ -29,18 +31,86 @@ export class ContactComponent {
     },
     logo: Img
   };
+  
   message: boolean = false
   contactForm!: FormGroup;
   formBuilder: FormBuilder = inject(FormBuilder)
-  clickOnSubmited: boolean = false
+  clickOnSubmitted: boolean = false
+  checkboxesTouched: boolean = false;
+  checkboxes: CheckboxItem[] = [];
+  checkboxesValue!: string;
+  checkboxesIsToucheded: boolean = false;
+
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
+      checkboxes: this.formBuilder.array([]),
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
     });
   }
+  get checkboxControls() {
+    return (this.contactForm.get('checkboxes') as FormArray).controls;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['componentConfig']) {
+      if(!isDeepEqual(changes['componentConfig'].previousValue, changes['componentConfig'].currentValue)) {
+        this.checkboxesInit()
+      } 
+    }
+  }
+
+  checkboxesInit(): void {
+    this.checkboxes = []
+    this.componentConfig.form.checkboxes.labels.forEach(element => {
+      
+      this.checkboxes.push({
+        label: element.text,
+        icon: {
+          active: {
+            src: `assets/imgs/form/${element.imgName}_white.svg`,
+            alt: element.text
+          },
+          inactive: {
+            src: `assets/imgs/form/${element.imgName}_dark.svg`,
+            alt: element.text
+          }
+         
+        },
+        control: new FormControl(false)
+      })
+    });
+  }
+
+  onCheckboxChange(e: any) {
+    this.checkboxesTouched = true
+   
+    const want: FormArray = this.contactForm.get('checkboxes') as FormArray;
+    if (e.target.checked) {
+      want.push(new FormControl(e.target.value));
+    } else {
+      let i = 0;
+      want.controls.forEach((item: any) => {
+        if (item.value == e.target.value) {
+          want.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+    this.checkboxesIsToucheded = this.checkboxesIsTouched()
+    this.checkboxesValue = want.value.join(', ')
+  }
+  
+  checkboxesIsTouched(): boolean {
+    const checkboxesTouchedAndEmpty = this.contactForm.get('checkboxes')?.value.length == 0 && this.checkboxesTouched
+    const clickOnSubmitted = this.clickOnSubmitted && this.contactForm.get('checkboxes')?.value.length == 0
+    return checkboxesTouchedAndEmpty || clickOnSubmitted
+  }
+  
   public sendEmail(e: Event) {
+    console.log(this.contactForm.get('checkboxes')?.value);
     
     e.preventDefault();
     if(this.contactForm.valid) {
@@ -48,6 +118,7 @@ export class ContactComponent {
       emailjs.sendForm(environment.emailjs.SERVICE_ID, environment.emailjs.TEMPLATE_ID, e.target as HTMLFormElement,  environment.emailjs.PUBLIC_KEY)
       .then((result: EmailJSResponseStatus) => {
         this.message = true;
+        this.sentMessage.emit(true)
         this.contactForm.reset()
         console.log(result);
       }, (error) => {
@@ -55,8 +126,7 @@ export class ContactComponent {
       });
     }
     else {
-      this.clickOnSubmited = true
+      this.clickOnSubmitted = true
     }
-    
   }
 }

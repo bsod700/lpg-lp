@@ -50,20 +50,16 @@ footer {
     box-shadow: 0px -14px 54px 0px #7966fe0d;
     position: relative;
     z-index: 2;
-    &:not(.no-contact) {
+    &.massage-sent {
         margin-top: 48px;
         .container {
             margin-top: 48px;
-            @include sm {
-                margin-top: -55px;
-            }
-            @include md {
-                margin-top: -80px;
-            }
         }
     }
-    &.no-contact {
-
+    &:not(.massage-sent) {
+        .container {
+            margin-top: -96px;
+        }
     }
     app-contact {
         ::ng-deep .contact-wrapper {

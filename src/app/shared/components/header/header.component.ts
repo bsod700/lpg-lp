@@ -1,10 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Img } from '../../interfaces/img.interface';
-import { Cta } from '../../interfaces/cta.interface';
 import { CtaComponent } from '../cta/cta.component';
 import { HeroImgComponent } from './hero-img/hero-img.component';
-import { DocumentService } from '@bsod700/lib';
+import { Cta, DocumentService, Img } from '@bsod700/lib';
 
 @Component({
   selector: 'app-header',

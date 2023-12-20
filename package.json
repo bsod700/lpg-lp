@@ -29,7 +29,7 @@
     "@angular/platform-server": "^16.2.12",
     "@angular/router": "^16.2.12",
     "@nguniversal/express-engine": "^16.2.0",
-    "@bsod700/lib": "^1.0.9",
+    "@bsod700/lib": "^1.0.10",
     "emailjs-com": "^3.2.0",
     "express": "^4.15.2",
     "rxjs": "~7.8.0",

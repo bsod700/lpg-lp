@@ -3,8 +3,8 @@
     <div class="circle glow-shadow"></div>
     <div class="circle glow-shadow"></div>
 </div>
-<footer [ngClass]="[componentConfig.contact ? '': 'no-contact']">
-    <app-contact *ngIf="componentConfig.contact" [componentConfig]="componentConfig.contact"/>
+<footer [ngClass]="[componentConfig.contact ? '': 'no-contact', messageIsSent ? 'massage-sent' : '']">
+    <app-contact *ngIf="componentConfig.contact" [componentConfig]="componentConfig.contact" (sentMessage)="sentMessage($event)"/>
   
     <div class="container">
         <div class="left">

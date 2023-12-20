@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Img } from 'src/app/shared/interfaces/img.interface';
+import { Img } from '@bsod700/lib';
 
 @Injectable({
   providedIn: 'root'

@@ -1,4 +1,5 @@
-import { Img } from "./img.interface";
+import { Img } from "@bsod700/lib";
+
 
 export interface card {
     img: Img,

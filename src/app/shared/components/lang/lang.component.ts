@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LangService } from '@bsod700/lib';
-import { Lang } from '../../interfaces/lang';
+import { Lang, LangService } from '@bsod700/lib';
 
 @Component({
   selector: 'app-lang',
@@ -30,15 +29,11 @@ export class LangComponent implements OnInit {
   ]
 
   ngOnInit() {
-    this.langService.setLangs(this.langs)
-    const langlang = this.langService.getCurrentLang()
-    this.langService.updateSelectedLang(langlang)
-    this.selectedLang = this.langService.getCurrentSelectedLang()
+    this.selectedLang = this.langService.initSelectLang(this.langs)
   }
 
 
   setLang(lang: string): void {
-    this.langService.updateSelectedLang(lang)
-    this.selectedLang = this.langService.getCurrentSelectedLang()
+    this.selectedLang = this.langService.updateLang(lang)
   }
 }

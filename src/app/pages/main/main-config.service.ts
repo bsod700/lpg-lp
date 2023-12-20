@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Img } from 'src/app/shared/interfaces/img.interface';
+import { Img } from '@bsod700/lib';
 
 @Injectable({
   providedIn: 'root'
@@ -157,6 +157,24 @@ export class MainConfigService {
           title: 'מעוניינים?',
           subtitle: 'השאירו פרטים',
           form: {
+            checkboxes: {
+              text: 'מה אתם מחפשים?',
+              labels: [
+                {
+                  imgName: 'consulting',
+                  text: 'ייעוץ'
+                },
+                {
+                  imgName: 'campaign',
+                  text: 'קמפיין'
+                },
+                {
+                  imgName: 'landingpage',
+                  text: 'דף נחיתה'
+                }
+              ],
+              error: 'אנא בחרו לפחות 1'
+            },
             name: {
               text: 'שם',
               lable: 'שם',
@@ -336,8 +354,26 @@ export class MainConfigService {
       footer: {
         contact: {
           title: 'Interested?',
-          subtitle: 'Leave your details',
+          subtitle: 'Let’s Talk business',
           form: {
+            checkboxes: {
+              text: 'What are you looking for?',
+              labels: [
+                {
+                  imgName: 'consulting',
+                  text: 'Consulting'
+                },
+                {
+                  imgName: 'campaign',
+                  text: 'Campaign'
+                },
+                {
+                  imgName: 'landingpage',
+                  text: 'Landing Page'
+                }
+              ],
+              error: 'Please select one'
+            },
             name: {
               text: 'Name',
               lable: 'Name',

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Img } from '../../interfaces/img.interface';
 import { ContactComponent } from '../contact/contact.component';
+import { Img } from '@bsod700/lib';
 
 @Component({
   selector: 'app-footer',
@@ -17,5 +17,9 @@ export class FooterComponent {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     contact: any,
     copyright: string
+  }
+  messageIsSent: boolean = false
+  sentMessage(isSent: boolean) {
+    this.messageIsSent = isSent
   }
 }

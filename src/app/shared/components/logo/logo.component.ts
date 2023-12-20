@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Img } from '../../interfaces/img.interface';
+import { Img } from '@bsod700/lib';
 
 @Component({
   selector: 'app-logo',

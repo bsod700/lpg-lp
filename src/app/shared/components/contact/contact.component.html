@@ -4,8 +4,26 @@
         <div class="talk">
           <h2>{{componentConfig.title}}</h2>
           <h3>{{componentConfig.subtitle}}</h3>
+          
+          <div class="checkboxes">
+            <label class="title">{{componentConfig.form.checkboxes.text}}</label>
+            <input class="hidden" type="text" [value]="checkboxesValue" name="checkboxes" aria-labelledby="what you need" required>
+            <div class="checkbox">
+              <label class="checkbox-wrapper" *ngFor="let checkbox of checkboxes; let i=index">
+                  <input type="checkbox" class="checkbox-input" [value]="checkbox.label" [formControl]="checkbox.control" (change)="onCheckboxChange($event)" aria-labelledby="what you need" />
+                  <div class="btn">
+                    <span class="checkbox-label">{{ checkbox.label }}</span>
+                    <img src="assets/imgs/form/checkmark.svg" alt class="checkmark">
+                    <img [src]="checkbox.icon.active.src" [alt]="checkbox.icon.active.alt" class="active">
+                    <img [src]="checkbox.icon.inactive.src" [alt]="checkbox.icon.inactive.alt" class="inactive">
+                  </div>
+              </label>
+            </div>
+          </div>
+          <div class="error-tooltip" *ngIf="checkboxesIsToucheded">{{componentConfig.form.checkboxes.error}}</div>
+
           <div class="input-group">
-            <label for="name">{{componentConfig.form.name.text}}</label>
+            <label for="name" class="title">{{componentConfig.form.name.text}}</label>
             <mat-form-field>
               <mat-label>{{componentConfig.form.name.lable}}</mat-label>
               <input matInput [placeholder]="componentConfig.form.name.lable" [value]="componentConfig.form.name.lable" name="name" formControlName="name" id="name" aria-labelledby="name" required>
@@ -16,7 +34,7 @@
           </div>
           
           <div class="input-group">
-            <label for="email">{{componentConfig.form.email.text}}</label>
+            <label for="email" class="title">{{componentConfig.form.email.text}}</label>
             <mat-form-field>
               <mat-label>{{componentConfig.form.email.lable}}</mat-label>
               <input matInput type="email" [placeholder]="componentConfig.form.email.lable" [value]="componentConfig.form.email.lable" name="email" formControlName="email" id="email" aria-labelledby="email" required>
@@ -30,7 +48,7 @@
           </div>
 
           <div class="input-group">
-            <label for="phone">{{componentConfig.form.phone.text}}</label>
+            <label for="phone" class="title">{{componentConfig.form.phone.text}}</label>
             <mat-form-field>
               <mat-label>{{componentConfig.form.phone.lable}}</mat-label>
               <input matInput type="phone" [placeholder]="componentConfig.form.phone.lable" [value]="componentConfig.form.phone.lable" name="phone" formControlName="phone" id="phone" aria-labelledby="phone" required>
