@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, inject, OnChanges, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormArray, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormArray, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ContactForm } from '../../interfaces/contact-form.interface';
 import { MatInputModule } from '@angular/material/input';
@@ -83,25 +83,28 @@ export class ContactComponent implements OnChanges, OnInit {
     });
   }
 
-  onCheckboxChange(e: any) {
-    this.checkboxesTouched = true
-   
+  onCheckboxChange(e: Event) {
+    const input = e.target as HTMLInputElement;
+    this.checkboxesTouched = true;
+  
     const want: FormArray = this.contactForm.get('checkboxes') as FormArray;
-    if (e.target.checked) {
-      want.push(new FormControl(e.target.value));
+    if (input.checked) {
+      want.push(new FormControl(input.value));
     } else {
       let i = 0;
-      want.controls.forEach((item: any) => {
-        if (item.value == e.target.value) {
+      want.controls.forEach((control: AbstractControl) => {
+        // Ensure the control is a FormControl before accessing its value
+        if (control instanceof FormControl && control.value == input.value) {
           want.removeAt(i);
           return;
         }
         i++;
       });
     }
-    this.checkboxesIsToucheded = this.checkboxesIsTouched()
-    this.checkboxesValue = want.value.join(', ')
+    this.checkboxesIsToucheded = this.checkboxesIsTouched();
+    this.checkboxesValue = want.value.join(', ');
   }
+  
   
   checkboxesIsTouched(): boolean {
     const checkboxesTouchedAndEmpty = this.contactForm.get('checkboxes')?.value.length == 0 && this.checkboxesTouched
