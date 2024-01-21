@@ -13,12 +13,7 @@ import { Cta, DocumentService, Img } from '@bsod700/lib';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnChanges {
-  @Input() componentConfig!: {
-    img: Img,
-    cta: Cta,
-    title: string,
-    paragraph: string
-   };
+  @Input() componentConfig!: HeaderConfig;
    documentService: DocumentService = inject(DocumentService)
 
    ngOnChanges() {
@@ -26,4 +21,11 @@ export class HeaderComponent implements OnChanges {
       'header-h1': this.componentConfig.title
     });
    }
+}
+
+export interface HeaderConfig {
+  img: Img,
+  cta: Cta,
+  title: string,
+  paragraph: string
 }

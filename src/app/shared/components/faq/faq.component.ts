@@ -12,9 +12,11 @@ import { Faq } from '../../interfaces/faq';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaqComponent {
-  @Input() componentConfig!: {
-    title: string,
-    subtitle: string,
-    qs: Faq[]
-  }
+  @Input() componentConfig!: FaqConfig;
+}
+
+export interface FaqConfig {
+  title: string,
+  subtitle: string,
+  qs: Faq[]
 }

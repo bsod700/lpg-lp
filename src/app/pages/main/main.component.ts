@@ -6,9 +6,10 @@ import { AboutComponent } from 'src/app/shared/components/about/about.component'
 import { OurServicesComponent } from 'src/app/shared/components/our-services/our-services.component';
 import { WhyUsComponent } from 'src/app/shared/components/why-us/why-us.component';
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
-import { MainConfigService } from './main-config.service';
+import { MainConfigService, MainPageConfig } from './main-config.service';
 import { FaqComponent } from 'src/app/shared/components/faq/faq.component';
-import { LangService } from '@bsod700/lib';
+import { LangService, PageService } from '@bsod700/lib';
+// import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-main',
@@ -19,12 +20,15 @@ import { LangService } from '@bsod700/lib';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent implements OnInit {
-  langService: LangService = inject(LangService)
-  mainConfigService: MainConfigService = inject(MainConfigService)
-  config = this.mainConfigService.getPageConfig()
+  private langService: LangService = inject(LangService)
+  private mainConfigService: MainConfigService = inject(MainConfigService)
+  private pageService: PageService = inject(PageService)
+  config!: MainPageConfig;
 
   ngOnInit() {
+    this.config = this.mainConfigService.getPageConfig()
     this.getCurrentLang()
+    this.pageService.setPageConfig('main', this.mainConfigService.getPageLanguages())
   }
 
   getCurrentLang(): void {

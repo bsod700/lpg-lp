@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactComponent } from '../contact/contact.component';
+import { ContactComponent, ContactConfig } from '../contact/contact.component';
 import { Img } from '@bsod700/lib';
 
 @Component({
@@ -14,12 +14,17 @@ import { Img } from '@bsod700/lib';
 export class FooterComponent {
   @Input() componentConfig!: {
     logoImg: Img,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    contact: any,
+    contact: ContactConfig,
     copyright: string
   }
   messageIsSent: boolean = false
   sentMessage(isSent: boolean) {
     this.messageIsSent = isSent
   }
+}
+
+export interface FooterConfig {
+  logoImg: Img,
+  contact: ContactConfig,
+  copyright: string
 }

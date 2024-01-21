@@ -11,9 +11,11 @@ import { card } from '../../interfaces/card.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OurServicesComponent {
-  @Input() componentConfig!: {
-    title: string,
-    subtitle: string,
-    cards: card[]
-   };
+  @Input() componentConfig!: OurServicesConfig;
+}
+
+export interface OurServicesConfig {
+  title: string,
+  subtitle: string,
+  cards: card[]
 }

@@ -12,9 +12,11 @@ import { Img } from '@bsod700/lib';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WhyUsComponent {
-  @Input() componentConfig!: {
-    title: string,
-    img: Img,
-    bullets: bullet[]
-   };
+  @Input() componentConfig!: WhyUsConfig;
+}
+
+export interface WhyUsConfig {
+  title: string,
+  img: Img,
+  bullets: bullet[]
 }

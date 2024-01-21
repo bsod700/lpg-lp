@@ -21,16 +21,7 @@ import { Img, isDeepEqual } from '@bsod700/lib';
 })
 export class ContactComponent implements OnChanges, OnInit {
   @Output() sentMessage = new EventEmitter<boolean>(false)
-  @Input() componentConfig!: {
-    title: string,
-    subtitle: string,
-    form: ContactForm,
-    message: {
-      title: string,
-      subtitle: string
-    },
-    logo: Img
-  };
+  @Input() componentConfig!: ContactConfig;
   
   message: boolean = false
   contactForm!: FormGroup;
@@ -132,4 +123,15 @@ export class ContactComponent implements OnChanges, OnInit {
       this.clickOnSubmitted = true
     }
   }
+}
+
+export interface ContactConfig {
+  title: string,
+  subtitle: string,
+  form: ContactForm,
+  message: {
+    title: string,
+    subtitle: string
+  },
+  logo: Img
 }

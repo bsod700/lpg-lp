@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { LangService } from '@bsod700/lib';
+import { GoogleTagService, LangService, RouteService } from '@bsod700/lib';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,11 +11,25 @@ import { LangService } from '@bsod700/lib';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
   title = 'lpg';
-  langService: LangService = inject(LangService)
-
-  constructor() {
+  private langService: LangService = inject(LangService)
+  private routeService: RouteService = inject(RouteService)
+  private googleTagService: GoogleTagService = inject(GoogleTagService)
+  
+  ngOnInit(): void {
     this.langService.subscribeToQueryParams();
+    this.initializeGtm();
+    this.routeService.getCurrentPage().subscribe(pageName => {
+      this.trackPage(pageName)
+    })
+  }
+
+  trackPage(pageName: string = 'home'): void {
+    this.googleTagService.trackPage(pageName)
+  }
+
+  private initializeGtm() {
+    this.googleTagService.initializeGtm(environment.gtmId)
   }
 }

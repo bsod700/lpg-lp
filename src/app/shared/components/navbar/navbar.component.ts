@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LogoComponent } from '../logo/logo.component';
 import { CtaComponent } from '../cta/cta.component';
 import { RouterModule } from '@angular/router';
-import { LangComponent } from '../lang/lang.component';
-import { Cta, Img } from '@bsod700/lib';
+import { Cta, Img, Lang, LangComponent } from '@bsod700/lib';
 
 @Component({
   selector: 'app-navbar',
@@ -17,14 +16,17 @@ import { Cta, Img } from '@bsod700/lib';
 export class NavbarComponent {
   scrolled = false;
   notTop = false;
-  @Input() componentConfig!: {
-    logoImg: Img,
-    cta: Cta
-   };
-
+  @Input() componentConfig!: NavbarConfig;
+  
    @HostListener('window:scroll', [])
    onWindowScroll() {
      this.scrolled = window.scrollY > 550;
      this.notTop = window.scrollY > 0;
    }
+}
+
+export interface NavbarConfig {
+  logoImg: Img,
+  cta: Cta,
+  langs: Lang[]
 }

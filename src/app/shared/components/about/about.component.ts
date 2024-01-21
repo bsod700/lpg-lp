@@ -10,9 +10,11 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
-  @Input() componentConfig!: {
-    title: string,
-    subtitle: string,
-    paragraph: string[]
-  };
+  @Input() componentConfig!: AboutConfig;
+}
+
+export interface AboutConfig {
+  title: string,
+  subtitle: string,
+  paragraph: string[]
 }

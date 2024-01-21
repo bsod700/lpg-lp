@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Img } from '@bsod700/lib';
+import { Img, Lang } from '@bsod700/lib';
+import { AboutConfig } from 'src/app/shared/components/about/about.component';
+import { FaqConfig } from 'src/app/shared/components/faq/faq.component';
+import { FooterConfig } from 'src/app/shared/components/footer/footer.component';
+import { HeaderConfig } from 'src/app/shared/components/header/header.component';
+import { NavbarConfig } from 'src/app/shared/components/navbar/navbar.component';
+import { OurServicesConfig } from 'src/app/shared/components/our-services/our-services.component';
+import { WhyUsConfig } from 'src/app/shared/components/why-us/why-us.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +20,7 @@ export class MainConfigService {
     }
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getPageConfig(): any {
+  getPageConfig(): MainPageConfig {
     return {
       navbar: {
         logoImg: {
@@ -25,6 +32,7 @@ export class MainConfigService {
           size: 'small',
           color: 'primery',
         },
+        langs: this.getPageLanguages()
       },
       header: {
         img: {
@@ -212,7 +220,7 @@ export class MainConfigService {
     }
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getPageConfigEnglish(): any {
+  getPageConfigEnglish(): MainPageConfig {
     return {
       navbar: {
         logoImg: {
@@ -224,6 +232,7 @@ export class MainConfigService {
           size: 'small',
           color: 'primery',
         },
+        langs: this.getPageLanguages()
       },
       header: {
         img: {
@@ -410,4 +419,31 @@ export class MainConfigService {
       },
     }
   }
+
+  getPageLanguages(): Lang[] {
+    return [
+      {
+        img: 'assets/imgs/langs/he.webp',
+        name: 'he',
+        title: 'עברית',
+        selected: false
+      },
+      {
+        img: 'assets/imgs/langs/us.webp',
+        name: 'en',
+        title: 'English',
+        selected: false
+      }
+    ]
+  }
+}
+
+export interface MainPageConfig {
+  navbar: NavbarConfig,
+  header: HeaderConfig,
+  about: AboutConfig,
+  ourServices: OurServicesConfig,
+  whyUs: WhyUsConfig,
+  faq: FaqConfig,
+  footer: FooterConfig
 }
