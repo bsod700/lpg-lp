@@ -12,12 +12,9 @@ import { Img } from '@bsod700/lib';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
-  @Input() componentConfig!: {
-    logoImg: Img,
-    contact: ContactConfig,
-    copyright: string
-  }
-  messageIsSent: boolean = false
+  @Input() componentConfig!: FooterConfig;
+  messageIsSent: boolean = false;
+  
   sentMessage(isSent: boolean) {
     this.messageIsSent = isSent
   }

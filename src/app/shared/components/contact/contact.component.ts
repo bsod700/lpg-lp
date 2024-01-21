@@ -23,9 +23,10 @@ export class ContactComponent implements OnChanges, OnInit {
   @Output() sentMessage = new EventEmitter<boolean>(false)
   @Input() componentConfig!: ContactConfig;
   
-  message: boolean = false
+  private formBuilder: FormBuilder = inject(FormBuilder)
+
+  message: boolean = false;
   contactForm!: FormGroup;
-  formBuilder: FormBuilder = inject(FormBuilder)
   clickOnSubmitted: boolean = false
   checkboxesTouched: boolean = false;
   checkboxes: CheckboxItem[] = [];
@@ -53,7 +54,7 @@ export class ContactComponent implements OnChanges, OnInit {
   }
 
   checkboxesInit(): void {
-    this.checkboxes = []
+    this.checkboxes = [];
     this.componentConfig.form.checkboxes.labels.forEach(element => {
       
       this.checkboxes.push({

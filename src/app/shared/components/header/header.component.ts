@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CtaComponent } from '../cta/cta.component';
 import { HeroImgComponent } from './hero-img/hero-img.component';
@@ -12,15 +12,15 @@ import { Cta, DocumentService, Img } from '@bsod700/lib';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnChanges {
-  @Input() componentConfig!: HeaderConfig;
-   documentService: DocumentService = inject(DocumentService)
-
-   ngOnChanges() {
+export class HeaderComponent {
+  private documentService: DocumentService = inject(DocumentService)
+  componentConfig!: HeaderConfig;
+  @Input('componentConfig') set _componentConfig(componentConfig: HeaderConfig) {
+    this.componentConfig = componentConfig;
     this.documentService.setInnerHtml({
-      'header-h1': this.componentConfig.title
+      'header-h1': componentConfig.title
     });
-   }
+  };
 }
 
 export interface HeaderConfig {
