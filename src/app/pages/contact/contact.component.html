@@ -1,1 +1,14 @@
-<p>contact works!</p>
+<div class="contact-wrapper">
+    <div class="page-content">
+        <app-navbar [componentConfig]="config.navbar"/>
+        <header>
+            <div class="container">
+                <h1>{{config.header.title}}</h1>
+                <p class="subtitle">{{config.header.paragraph}}</p>
+                <app-cta [ctaConfig]="config.header.cta" />
+            </div>
+        </header>
+        <app-footer [componentConfig]="config.footer"/>
+    </div>
+   
+</div>

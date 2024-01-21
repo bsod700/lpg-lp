@@ -1,10 +1,15 @@
-<div class="navbar-wrapper" [ngClass]="{ 'scrolled-nav': scrolled,  'scrolled-top-nav': notTop}">
+<nav class="navbar-wrapper" [ngClass]="{ 'scrolled-nav': scrolled,  'scrolled-top-nav': notTop}" [routerLink]="['/' + '']">
     <div class="container">
         <div class="logo-container">
             <app-logo [logoConfig]="componentConfig.logoImg" />
         </div>
+        
+        <div class="lang-container">
+            <lib-lang [langs]="componentConfig.langs"></lib-lang>
+        </div>
+        
         <div class="cta-container">
             <app-cta [ctaConfig]="componentConfig.cta" />
         </div>
     </div>
-</div>
+</nav>

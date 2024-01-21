@@ -8,11 +8,11 @@ export const routes: Routes = [
     },
     {
         path: 'contact', 
-        loadComponent:() => import('./pages/contact/contact.component').then(mod  => mod.ContactComponent),
+        loadComponent:() => import('./pages/contact/contact.component').then(mod  => mod.ContactPageComponent),
         title: 'contact',
     },
     {
-        path: '', 
+        path: '**', 
         loadComponent:() => import('./pages/page-not-found/page-not-found.component').then(mod  => mod.PageNotFoundComponent),
         title: '404',
     }

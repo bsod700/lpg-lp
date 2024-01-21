@@ -1,0 +1,60 @@
+@import "src/styles/mixin";
+.lang-wrapper {
+    position: relative;
+    .lang, .selected-lang {
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+       
+        gap: 6px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+        span {
+            font-size: 18px;
+        }
+       
+    }
+    .lang {
+        width: 125px;
+        &:hover {
+            background-color: darken($color: #fff, $amount: 10);
+        }
+    }
+    .langs {
+        opacity: 0;
+        pointer-events: none;
+        background-color: #fff;
+        padding: 3px;
+        border-radius: 6px;
+        position: absolute;
+     
+        &:lang(he) {
+            left: auto;
+            @include sm {
+                left: 0;
+            }
+            @include xxl {
+                left: auto;
+            }
+        }
+        &:lang(en) {
+            right: auto;
+            @include sm {
+                right: 0;
+            }
+            @include xxl {
+                right: auto;
+            }
+        }
+    }
+    &:hover {
+        .langs {
+            opacity: 1;
+            pointer-events: all;
+            height: auto;
+        }
+    }
+}

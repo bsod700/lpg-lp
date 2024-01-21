@@ -14,28 +14,51 @@
     .container {
         display: flex;
         justify-content: space-between;
-        padding-top: 140px;
+        padding-top: 192px;
         flex-direction: column;
         @include md {
             flex-direction: row;
-            padding-top: 192px;
         }
     }
     .img-container {
-        
+        &:lang(he) {
+            @include md {
+                margin-right: -40px;
+                margin-top: -40px;
+            }
+            @include lg {
+                margin-right: -190px;
+                margin-top: -40px;
+            }
+            @include xl {
+                margin-right: -190px;
+                margin-top: -40px;
+            }
+        }
+        &:lang(en) {
+            @include md {
+                margin-left: -40px;
+                margin-top: -40px;
+            }
+            @include lg {
+                margin-left: -190px;
+                margin-top: -40px;
+            }
+            @include xl {
+                margin-left: -190px;
+                margin-top: -40px;
+            }
+        }
         @include md {
             flex: 0 0 375px;
-            margin-right: -40px;
             margin-top: -40px;
         }
         @include lg {
             flex: 0 0 540px;
-            margin-right: -190px;
             margin-top: -40px;
         }
         @include xl {
             flex: 0 0 635px;
-            margin-right: -190px;
             margin-top: -40px;
         }
          app-hero-img ::ng-deep svg {
@@ -83,14 +106,15 @@
             font-size: 45px;
         }
         @include xl {
-            font-size: 60px;
+            font-size: 50px;
+        }
+
+        ::ng-deep span {
+            color: $primery;
         }
     }
     p {
         margin-bottom: 24px;
         font-size: 18px;
-        @include lg {
-            font-size: 24px;
-        }
     }
 }

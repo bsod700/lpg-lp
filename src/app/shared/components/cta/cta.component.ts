@@ -1,14 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Cta } from '../../interfaces/cta.interface';
+import { Cta } from '@bsod700/lib';
 
-declare let dataLayer: any[];
+declare let dataLayer: unknown[];
 @Component({
   selector: 'app-cta',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './cta.component.html',
-  styleUrls: ['./cta.component.scss']
+  styleUrls: ['./cta.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CtaComponent {
   @Input() ctaConfig!: Cta;

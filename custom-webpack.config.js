@@ -1,7 +1,7 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   optimization: {
@@ -30,8 +30,9 @@ module.exports = {
       minRatio: 0.8,
     }),
     new BrotliPlugin(),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg|webp)$/i,
+    new ESLintPlugin({
+      extensions: ['ts', 'js'],
+      failOnError: true // Makes the build fail if there's a lint error
     }),
   ],
 };
